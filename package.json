@@ -1,0 +1,22 @@
+{
+  "name": "TASK 4 CYPRESS - BDD IMPLEMENTATION",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run --headless --browser chrome"
+  },
+  "keywords": [],
+  "author": "Jefri After Office",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "cypress": "^14.3.3",
+    "esbuild": "^0.25.4",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

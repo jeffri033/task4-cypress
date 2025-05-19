@@ -1,0 +1,35 @@
+name: Task 4 Cypress
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Clean and install dependencies
+        run: rm -rf node_modules package-lock.json && npm install
+
+      - name: Fix Cypress permissions
+        run: chmod +x node_modules/.bin/cypress
+
+      - name: Debug CI
+        run: ls -lah node_modules/.bin/
+
+      - name: Run Cypress tests
+        run: ./node_modules/.bin/cypress run
